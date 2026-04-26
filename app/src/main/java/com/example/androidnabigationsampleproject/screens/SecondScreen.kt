@@ -20,26 +20,17 @@ import androidx.compose.ui.unit.sp
 import com.example.androidnabigationsampleproject.ui.theme.AndroidNabigationSampleProjectTheme
 
 @Composable
-fun FirstScreen( modifier: Modifier = Modifier) {
-
-    val name = remember { mutableStateOf("") }
-
+fun SecondScreen( modifier: Modifier = Modifier) {
     Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp),
         verticalArrangement = Arrangement.Center,
         Alignment.CenterHorizontally
-
     ) {
-        Text("This is first screen", fontSize = 24.sp)
+        Text("This is Second screen", fontSize = 24.sp)
         Spacer(modifier = Modifier.padding(16.dp))
-        OutlinedTextField(
-            value = name.value,
-            onValueChange = {
-                name.value = it
-            }
-        )
+        Text("Welcome", fontSize = 24.sp)
         Spacer(modifier = Modifier.padding(16.dp))
         Button(onClick = {
 
@@ -51,8 +42,8 @@ fun FirstScreen( modifier: Modifier = Modifier) {
 
 @Preview(showBackground = true)
 @Composable
-fun FirstScreenPreview() {
+fun SecondScreenPreview() {
     AndroidNabigationSampleProjectTheme {
-        FirstScreen()
+        SecondScreen()
     }
 }
