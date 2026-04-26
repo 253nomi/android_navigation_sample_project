@@ -7,7 +7,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
@@ -37,12 +36,13 @@ fun MyApp(modifier: Modifier) {
 
     NavHost(navController = navController, startDestination = "firstScreen", modifier = modifier) {
         composable(route = "firstScreen") {
-            FirstScreen {
-                navController.navigate(route = "secondScreen")
+            FirstScreen { name ->
+                navController.navigate(route = "secondScreen/$name")
             }
         }
-        composable(route = "secondScreen") {
-            SecondScreen {
+        composable(route = "secondScreen/{name}") {
+            val name = it.arguments?.getString("name") ?: "no name"
+            SecondScreen(name) {
                 navController.navigate(route = "firstScreen")
             }
         }

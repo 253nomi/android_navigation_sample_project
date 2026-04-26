@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.sp
 import com.example.androidnabigationsampleproject.ui.theme.AndroidNabigationSampleProjectTheme
 
 @Composable
-fun SecondScreen(navigationToFirstScreen: () -> Unit) {
+fun SecondScreen(name: String, navigationToFirstScreen: (String) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -30,10 +30,10 @@ fun SecondScreen(navigationToFirstScreen: () -> Unit) {
     ) {
         Text("This is Second screen", fontSize = 24.sp)
         Spacer(modifier = Modifier.padding(16.dp))
-        Text("Welcome", fontSize = 24.sp)
+        Text("Welcome $name", fontSize = 24.sp)
         Spacer(modifier = Modifier.padding(16.dp))
         Button(onClick = {
-            navigationToFirstScreen()
+            navigationToFirstScreen(name)
         }, shape = RoundedCornerShape(12.dp)) {
             Text("Go to Next Screen", fontSize = 24.sp)
         }
@@ -44,7 +44,7 @@ fun SecondScreen(navigationToFirstScreen: () -> Unit) {
 @Composable
 fun SecondScreenPreview() {
     AndroidNabigationSampleProjectTheme {
-        SecondScreen({
+        SecondScreen("Ali",{
 
         })
     }
