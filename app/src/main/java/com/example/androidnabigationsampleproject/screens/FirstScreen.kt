@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.sp
 import com.example.androidnabigationsampleproject.ui.theme.AndroidNabigationSampleProjectTheme
 
 @Composable
-fun FirstScreen( modifier: Modifier = Modifier) {
+fun FirstScreen(navigationToSecondScreen: () -> Unit) {
 
     val name = remember { mutableStateOf("") }
 
@@ -42,7 +42,7 @@ fun FirstScreen( modifier: Modifier = Modifier) {
         )
         Spacer(modifier = Modifier.padding(16.dp))
         Button(onClick = {
-
+            navigationToSecondScreen()
         }, shape = RoundedCornerShape(12.dp)) {
             Text("Go to Next Screen", fontSize = 24.sp)
         }
@@ -53,6 +53,8 @@ fun FirstScreen( modifier: Modifier = Modifier) {
 @Composable
 fun FirstScreenPreview() {
     AndroidNabigationSampleProjectTheme {
-        FirstScreen()
+        FirstScreen({
+
+        })
     }
 }
