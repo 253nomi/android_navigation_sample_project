@@ -1,4 +1,4 @@
-package com.example.androidnabigationsampleproject.ui.theme
+package com.example.androidnabigationsampleproject.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -50,7 +50,7 @@ fun FirstScreen( modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun FirstScreenPreview() {
-    AndroidNabigationSampleProjectTheme {
+    _root_ide_package_.com.example.androidnabigationsampleproject.ui.theme.AndroidNabigationSampleProjectTheme {
         FirstScreen()
     }
 }
