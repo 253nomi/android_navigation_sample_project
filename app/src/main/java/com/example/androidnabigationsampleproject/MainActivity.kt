@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.androidnabigationsampleproject.R.layout
 import com.example.androidnabigationsampleproject.ui.theme.AndroidNabigationSampleProjectTheme
 import com.example.androidnabigationsampleproject.screens.FirstScreen
 import com.example.androidnabigationsampleproject.screens.SecondScreen
@@ -19,6 +20,7 @@ import com.example.androidnabigationsampleproject.screens.SecondScreen
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+//        setContentView(R.layout.first_screen)
         enableEdgeToEdge()
         setContent {
             AndroidNabigationSampleProjectTheme {
