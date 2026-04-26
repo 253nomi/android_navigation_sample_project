@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -41,7 +42,7 @@ fun FirstScreen( modifier: Modifier = Modifier) {
         Spacer(modifier = Modifier.padding(16.dp))
         Button(onClick = {
 
-        }) {
+        }, shape = RoundedCornerShape(12.dp)) {
             Text("Go to Next Screen", fontSize = 24.sp)
         }
     }
